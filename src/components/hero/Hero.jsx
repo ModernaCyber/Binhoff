@@ -3,6 +3,7 @@ import { AiOutlineDown } from "react-icons/ai";
 import { IoMdMenu } from "react-icons/io";
 import { IoIosCall } from "react-icons/io";
 import Wrapper from "../wrapper/Wrapper";
+import { motion } from "framer-motion";
 
 // Import images
 import image1 from "../../assets/hero_1.jpg";
@@ -43,9 +44,31 @@ const Hero = () => {
               </button>
             </div>
           </div>
-          <div className="w-full flex justify-center object-cover items-center h-auto min-h-[480px] gap-x-6 mx-auto py-auto">
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, x: 400 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            initial="hidden"
+            whileInView="visible"
+            transition={{
+              duration: 1,
+              delay: 0.75,
+            }}
+            className="w-full flex justify-center object-cover items-center h-auto min-h-[480px] gap-x-6 mx-auto py-auto"
+          >
             {images.map((img, i) => (
-              <div
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: -20 * (i + 1) },
+                  visible: { opacity: 1, y: Math.random() * (i + 1) * 30 },
+                }}
+                initial="hidden"
+                whileInView="visible"
+                transition={{
+                  duration: 1,
+                  delay: 1.5,
+                }}
                 className="w-16 h-[320px] rounded-lg object-cover overflow-hidden"
                 key={i}
               >
@@ -54,9 +77,9 @@ const Hero = () => {
                   alt={`hero_image_${i}`}
                   className="h-full w-full"
                 />
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
         {/* 2 buttons absolute  */}
         <div className="absolute -bottom-16 right-24 w-10 h-auto gap-y-2 flex flex-col justify-between">

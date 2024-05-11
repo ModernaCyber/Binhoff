@@ -14,7 +14,7 @@ const News_Card = ({ news, index }) => {
       transition={{
         // duration: Math.random()*index,
         duration: 0.75,
-          delay: 0.3,
+          delay: 0.3*index,
       }}
       className={`w-[280px] h-[420px] rounded-md overflow-hidden flex  flex-col ${
         index % 2 == 0 ? "mt-16" : "ml-auto mx-8"
