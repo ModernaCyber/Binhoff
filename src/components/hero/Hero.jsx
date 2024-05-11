@@ -30,7 +30,7 @@ const Hero = () => {
         </div>
         <div className="flex w-full justify-between h-auto">
           <div className="h-auto min-h-[600px] w-auto flex flex-col justify-center items-start">
-            <div className="flex w-full flex-col justify-start items-start text-6xl font-bold">
+            <div className="flex w-full flex-col justify-start items-start text-6xl font-bold dark:text-[#5D5D6D]">
               <h2 className="">Investment</h2>
               <h2 className="">in real</h2>
               <h2 className="">estate</h2>

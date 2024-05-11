@@ -12,17 +12,17 @@ const Footer = () => {
           <div className="flex justify-start flex-col items-start">
             <Logo />
           </div>
-          <div className="flex justify-start flex-col items-start">
+          <div className="flex justify-start flex-col items-start dark:text-[#5D5D6D]">
             <button className="">Product</button>
             <button className="">Invest</button>
             <button className="">Quickstart</button>
           </div>
-          <div className="flex justify-start flex-col items-start">
+          <div className="flex justify-start flex-col items-start dark:text-[#5D5D6D]">
             <button className="">Blog</button>
             <button className="">Careers</button>
             <button className="">About</button>
           </div>
-          <div className="flex justify-start gap-x-1">
+          <div className="flex justify-start gap-x-1 dark:text-[#5D5D6D]">
             <button className="w-10 rounded-full h-10 border border-[#5d5d60] flex justify-center items-center">
               <FaTwitter />
             </button>
@@ -35,7 +35,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex w-full flex-wrap justify-center my-2 dark:bg-black ">
-          <p className="text-sm dark:text-white ">
+          <p className="text-sm dark:text-[#5D5D6D] ">
             <span className="px-1 ">Binhoff</span> © {new Date().getFullYear()}{" "}
             All rights reserved.
           </p>

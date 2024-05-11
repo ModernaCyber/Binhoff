@@ -46,7 +46,7 @@ const Opportunity = () => {
           }}
           className="p-8 w-[280px] ml-auto h-[400px] flex flex-col rounded-xl overflow-hidden"
         >
-          <div className="h-14 text-xl">
+          <div className="h-14 text-xl dark:text-[#5D5D6D]">
             <PiPottedPlant />
           </div>
           <h4 className="text-xl font-semibold">Private Investor</h4>
@@ -71,7 +71,7 @@ const Opportunity = () => {
           }}
           className="p-8 w-[280px] mx-auto h-[400px] flex flex-col rounded-xl  overflow-hidden"
         >
-          <div className=" flex items-start justify-start h-14 text-xl">
+          <div className=" flex items-start justify-start h-14 text-xl dark:text-[#5D5D6D]">
             <span className="-mt-1 rotate-180 ">D</span>
             <span className=" ">D</span>
           </div>
@@ -97,7 +97,7 @@ const Opportunity = () => {
           }}
           className="p-8 w-[280px] mr-auto h-[400px] flex flex-col rounded-xl bg-[#dadfe1] dark:bg-black dark:border dark:border-[#dadfe1] overflow-hidden"
         >
-          <div className="h-14 text-xl">
+          <div className="h-14 text-xl dark:text-[#5D5D6D]">
             <CiUmbrella />
           </div>
           <h4 className="text-xl font-semibold">Spread The Risk</h4>
