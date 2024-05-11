@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
 import Wrapper from "../wrapper/Wrapper";
 import { FaQuoteRight } from "react-icons/fa";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
@@ -12,7 +12,7 @@ const Testimonial = ({
   totalTestimonials,
 }) => {
   return (
-    <div className="flex  py-8 w-full max-w-[600px] mx-auto h-full">
+    <div className="flex  py-8 w-full  mx-auto h-full">
       <div className="h-full py-2 pl-2 w-24 text-[green] flex items-start justify-start text-2xl">
         <FaQuoteRight />
       </div>
@@ -56,6 +56,17 @@ const Testimonial = ({
 };
 
 const Testimonials = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+    }
+  }, [isInView, mainControls]);
+
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const testimonials = [
     {
@@ -85,11 +96,24 @@ const Testimonials = () => {
 
   return (
     <Wrapper>
-      <div className="flex flex-col py-6 h-auto">
+      <motion.div
+        ref={ref}
+        variants={{
+          hidden: { opacity: 0, y: 75 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        animate={mainControls}
+        transition={{
+          duration: 0.75,
+          delay: 0.5,
+        }}
+        className="flex flex-col py-10 h-auto"
+      >
         <div className="mb-4">
-          <h3 className="text-2xl  ">Trusted by clients</h3>
+          <h3 className="text-4xl  ">Trusted by clients</h3>
         </div>
-        <div className="relative h-[400px] overflow-hidden">
+        <div className="relative h-[300px] overflow-hidden">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -104,7 +128,7 @@ const Testimonials = () => {
             />
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </Wrapper>
   );
 };

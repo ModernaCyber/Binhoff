@@ -11,7 +11,7 @@ const Learn_more = () => {
       </div>
       <Wrapper>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white py-6">
-          <div className="text-2xl  mb-4 flex flex-col justify-center w-full items-center text-center">
+          <div className="text-4xl  mb-4 flex flex-col justify-center w-full items-center text-center">
             <h2 className="">Learn more about </h2>
             <h2 className="">investing with Binhoff</h2>
           </div>

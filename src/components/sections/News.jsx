@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+import { motion, useInView, useAnimation } from "framer-motion";
+import { useRef, useEffect } from "react";
 import Wrapper from "../wrapper/Wrapper";
 import news_1 from "../../assets/news_1.jpg";
 import news_2 from "../../assets/news_2.jpg";
@@ -43,10 +45,32 @@ const News = () => {
       text: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney ",
     },
   ];
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+    }
+  }, [isInView, mainControls]);
+
   return (
     <Wrapper>
-      <div className="w-full h-auto flex-col justify-center items-center">
-        <h2 className="text-2xl text-center mb-8 mt-2">Actual News</h2>
+      <motion.div
+        ref={ref}
+        variants={{
+          hidden: { opacity: 0, y: 75 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        animate={mainControls}
+        transition={{
+          duration: 0.5,
+          delay: 0.3,
+        }} className="w-full h-auto flex-col justify-center items-center">
+        <h2 className="text-4xl text-center mb-8 mt-2">Actual News</h2>
         <div className="w-full h-auto grid grid-cols-2">
           {news.map((article, i) => (
             <News_Card key={i} news={article} index={i + 1} />
@@ -57,7 +81,7 @@ const News = () => {
             See more
           </button>
         </div>
-      </div>
+      </motion.div>
     </Wrapper>
   );
 };

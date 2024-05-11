@@ -35,7 +35,7 @@ const Hero = () => {
               <h2 className="">estate</h2>
             </div>
             <div className="flex gap-x-8 mt-6">
-              <button className="rounded-md px-4 py-2 text-nowrap bg-[green]">
+              <button className="rounded-md px-4 py-2 text-nowrap bg-[green] text-[white]">
                 Request or call
               </button>
               <button className="rounded-md px-4 py-2 border text-nowrap border-[#5d5d60]">

@@ -1,10 +1,35 @@
 import { CiUmbrella } from "react-icons/ci";
 import { PiPottedPlant } from "react-icons/pi";
-
+import { motion, useInView, useAnimation } from "framer-motion";
+import { useRef, useEffect } from "react";
 const Opportunity = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+    }
+  }, [isInView, mainControls]);
+
   return (
-    <div className=" flex w-auto mx-auto h-auto py-10 flex-col">
-      <h3 className="text-2xl text-center">
+    <motion.div
+      ref={ref}
+      variants={{
+        hidden: { opacity: 0, y: 75 },
+        visible: { opacity: 1, y: 0 },
+      }}
+      initial="hidden"
+      animate={mainControls}
+      transition={{
+        duration: 1,
+        delay: 0.5,
+      }}
+      className=" flex w-auto mx-auto h-auto py-10 flex-col"
+    >
+      <h3 className="text-4xl text-center">
         The unique investment opportunity
       </h3>
       <div className="grid mx-auto grid-cols-3 gap-x-2">
@@ -49,7 +74,7 @@ const Opportunity = () => {
           <a className="text-sm text-[green]">View more</a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
