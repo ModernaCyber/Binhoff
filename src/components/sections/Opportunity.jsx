@@ -27,9 +27,9 @@ const Opportunity = () => {
         duration: 1,
         delay: 0.5,
       }}
-      className=" flex w-auto mx-auto h-auto py-10 flex-col"
+      className=" flex w-auto mx-auto h-auto min-h-screen py-10 flex-col"
     >
-      <h3 className="text-4xl text-center">
+      <h3 className="text-4xl mt-8 text-center">
         The unique investment opportunity
       </h3>
       <div className="grid mx-auto grid-cols-3 gap-x-2">
@@ -37,7 +37,7 @@ const Opportunity = () => {
           <div className="h-14 text-xl">
             <PiPottedPlant />
           </div>
-          <h4 className="text-xl">Private Investor</h4>
+          <h4 className="text-xl font-semibold">Private Investor</h4>
           <span className="my-4">
             Contrary to popular belief, Lorem Ipsum is not simply random text.
             It has roots in a piece of classical Latin literature from 45 BC,
@@ -51,7 +51,7 @@ const Opportunity = () => {
             <span className="-mt-1 rotate-180 ">D</span>
             <span className=" ">D</span>
           </div>
-          <h4 className="text-xl">Aligned Interests</h4>
+          <h4 className="text-xl font-semibold">Aligned Interests</h4>
           <span className="my-4">
             Contrary to popular belief, Lorem Ipsum is not simply random text.
             It has roots in a piece of classical Latin literature from 45 BC,
@@ -64,7 +64,7 @@ const Opportunity = () => {
           <div className="h-14 text-xl">
             <CiUmbrella />
           </div>
-          <h4 className="text-xl">Spread The Risk</h4>
+          <h4 className="text-xl font-semibold">Spread The Risk</h4>
           <span className="my-4">
             Contrary to popular belief, Lorem Ipsum is not simply random text.
             It has roots in a piece of classical Latin literature from 45 BC,

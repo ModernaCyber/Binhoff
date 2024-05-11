@@ -29,7 +29,7 @@ const Introduction = () => {
           delay: 0.3,
         }}
          className="w-full flex flex-col justify-start h-[400px] py-10">
-        <div className="text-4xl ">
+        <div className="text-4xl mb-4 ">
           <h3 className="">The property that </h3>
           <h3 className=""> suits you perfectly</h3>
         </div>

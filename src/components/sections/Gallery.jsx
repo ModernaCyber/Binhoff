@@ -1,4 +1,4 @@
-import { useRef,  useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 import Wrapper from "../wrapper/Wrapper";
@@ -34,7 +34,8 @@ const Gallery = () => {
           duration: 0.75,
           delay: 0.3,
         }}
-         className="flex flex-col w-full h-[600px] relative py-10">
+        className="flex flex-col w-full h-[600px] relative py-10"
+      >
         <div className="w-full h-12 flex justify-between ">
           <h2 className="text-2xl">Binhoff gallery</h2>
           <div className="ml-auto flex items-center">
@@ -52,6 +53,12 @@ const Gallery = () => {
         <div className="w-full h-full overflow-hidden flex justify-start ">
           {images.map((img, i) => (
             <motion.div
+              initial={{ opacity: 0, x: 600, scale: 0.8 }}
+              whileInView ={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{
+                duration: 1.25,
+                delay: 0.5,
+              }}
               key={i}
               className="h-[400px] w-full flex items-center rounded-2xl overflow-hidden justify-start"
             >

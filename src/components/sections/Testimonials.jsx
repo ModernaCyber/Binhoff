@@ -99,7 +99,7 @@ const Testimonials = () => {
       <motion.div
         ref={ref}
         variants={{
-          hidden: { opacity: 0, y: 75 },
+          hidden: { opacity: 0, y: 100 },
           visible: { opacity: 1, y: 0 },
         }}
         initial="hidden"
@@ -108,9 +108,9 @@ const Testimonials = () => {
           duration: 0.75,
           delay: 0.5,
         }}
-        className="flex flex-col py-10 h-auto"
+        className="flex flex-col py-10 h-auto "
       >
-        <div className="mb-4">
+        <div className="mb-4 h-auto min-h-[80px] flex items-center">
           <h3 className="text-4xl  ">Trusted by clients</h3>
         </div>
         <div className="relative h-[300px] overflow-hidden">
