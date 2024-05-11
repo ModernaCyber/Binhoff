@@ -17,7 +17,11 @@ const Learn_more = () => {
           </div>
           <form onSubmit={() => {}} className="">
             <div className="flex gap-x-2">
-              <input className="p-2" type="" placeholder="Enter Your email" />
+              <input
+                className="p-2 border border-neutral-300 rounded-md focus:outline-none focus:border-neutral-500 placeholder-gray-400"
+                type="email"
+                placeholder="Enter Your email"
+              />
               <button className="border px-4 py-2 border-[#5d5d60]">
                 Sign up
               </button>

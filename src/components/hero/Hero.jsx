@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { AiOutlineDown } from "react-icons/ai";
 import { IoMdMenu } from "react-icons/io";
 import { IoIosCall } from "react-icons/io";
@@ -15,20 +14,6 @@ import image6 from "../../assets/hero_4.jpg";
 
 const Hero = () => {
   const [images] = useState([image1, image2, image3, image4, image5, image6]);
-
-  const imageVariants = {
-    hidden: { x: "100%", opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: { type: "tween", duration: 0.5, ease: "easeInOut" },
-    },
-  };
-
-  const containerVariants = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.1 } },
-  };
 
   return (
     <Wrapper>
@@ -58,33 +43,27 @@ const Hero = () => {
               </button>
             </div>
           </div>
-          <motion.div
-            className="w-full flex h-full relative gap-x-6"
-            initial="hidden"
-            animate="visible"
-            variants={containerVariants}
-          >
+          <div className="w-full flex justify-center object-cover items-center h-auto min-h-[480px] gap-x-6 mx-auto py-auto">
             {images.map((img, i) => (
-              <motion.div
-                className="w-12 h-[320px] rounded-lg object-cover overflow-hidden"
+              <div
+                className="w-16 h-[320px] rounded-lg object-cover overflow-hidden"
                 key={i}
-                custom={i}
-                variants={imageVariants}
-                style={{
-                  y: `${Math.random() * 100}px`, // Randomize Y position
-                }}
               >
-                <img src={img} alt={`hero_image_${i}`} className="h-full w-full" />
-              </motion.div>
+                <img
+                  src={img}
+                  alt={`hero_image_${i}`}
+                  className="h-full w-full"
+                />
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
         {/* 2 buttons absolute  */}
-        <div className="absolute bottom-4 right-24 w-10 h-30 flex flex-col justify-between">
-          <button className="flex justify-center items-center w-10 h-10 rounded-full bg-[green] text-[white]">
+        <div className="absolute -bottom-16 right-24 w-10 h-auto gap-y-2 flex flex-col justify-between">
+          <button className="flex justify-center items-center w-14 h-14 rounded-full bg-[green] text-[white]">
             <IoIosCall />
           </button>
-          <button className="flex justify-center items-center w-10 h-10 rounded-full bg-[#BC4D34] text-[white]">
+          <button className="flex justify-center items-center w-14 h-14 rounded-full bg-[#BC4D34] text-[white]">
             <IoMdMenu />
           </button>
         </div>
