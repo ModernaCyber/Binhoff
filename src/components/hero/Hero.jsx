@@ -17,7 +17,7 @@ const Hero = () => {
 
   return (
     <Wrapper>
-      <div className="flex w-full h-auto flex-col relative">
+      <div className="flex w-full h-auto  flex-col relative">
         <div className="w-full h-14 flex justify-between items-center">
           <span className="text-lg">investment potential</span>
           <div className="flex gap-x-1 h-full items-center text-lg">
@@ -28,7 +28,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="flex w-full justify-between h-auto">
-          <div className="h-auto min-h-[480px] w-auto flex flex-col justify-center items-start">
+          <div className="h-auto min-h-[600px] w-auto flex flex-col justify-center items-start">
             <div className="flex w-full flex-col justify-start items-start text-6xl font-bold">
               <h2 className="">Investment</h2>
               <h2 className="">in real</h2>

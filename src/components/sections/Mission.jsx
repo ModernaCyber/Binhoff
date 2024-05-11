@@ -30,10 +30,10 @@ const Mission = () => {
             visible: { opacity: 1, y: 0 },
           }}
           initial="hidden"
-          animate={mainControls}
+          whileInView="visible"
           transition={{
-            duration: 0.5,
-            delay: 0.25,
+            duration: 0.75,
+            delay: 0.3,
           }}
           className="relative z-10 flex flex-col items-center justify-center h-full text-white py-6"
         >

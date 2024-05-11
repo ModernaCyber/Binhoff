@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useRef, useState, useEffect } from "react";
-import { motion, useInView, useAnimation } from "framer-motion";
+import { motion, useInView, useAnimation, AnimatePresence } from "framer-motion";
 import Wrapper from "../wrapper/Wrapper";
 import { FaQuoteRight } from "react-icons/fa";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
@@ -103,7 +103,7 @@ const Testimonials = () => {
           visible: { opacity: 1, y: 0 },
         }}
         initial="hidden"
-        animate={mainControls}
+        whileInView="visible"
         transition={{
           duration: 0.75,
           delay: 0.5,
@@ -113,11 +113,12 @@ const Testimonials = () => {
         <div className="mb-4 h-auto min-h-[80px] flex items-center">
           <h3 className="text-4xl  ">Trusted by clients</h3>
         </div>
+        <AnimatePresence>
         <div className="relative h-[300px] overflow-hidden">
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 0, x:100 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            exit={{ opacity: 0,x:-100 }}
             transition={{ duration: 0.5 }}
             className="absolute top-0 left-0 w-full h-full"
           >
@@ -128,6 +129,7 @@ const Testimonials = () => {
             />
           </motion.div>
         </div>
+        </AnimatePresence>
       </motion.div>
     </Wrapper>
   );

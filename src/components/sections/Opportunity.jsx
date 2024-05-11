@@ -22,10 +22,10 @@ const Opportunity = () => {
         visible: { opacity: 1, y: 0 },
       }}
       initial="hidden"
-      animate={mainControls}
+      whileInView="visible"
       transition={{
-        duration: 1,
-        delay: 0.5,
+        duration: 0.75,
+        delay: 0.3,
       }}
       className=" flex w-auto mx-auto h-auto min-h-screen py-10 flex-col"
     >

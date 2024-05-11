@@ -8,7 +8,14 @@ import news_3 from "../../assets/news_3.jpg";
 import news_4 from "../../assets/news_4.jpg";
 const News_Card = ({ news, index }) => {
   return (
-    <div
+    <motion.div
+      initial={{ y: 30, scale:.8 }}
+      whileInView={{ y: 0,scale:1 }}
+      transition={{
+        // duration: Math.random()*index,
+        duration: 0.75,
+          delay: 0.3,
+      }}
       className={`w-[280px] h-[420px] rounded-md overflow-hidden flex  flex-col ${
         index % 2 == 0 ? "mt-16" : "ml-auto mx-8"
       }`}
@@ -22,7 +29,7 @@ const News_Card = ({ news, index }) => {
       </div>
       <span className="text-sm mb-2 mt-2">{news.text}</span>
       <a className="text-[green] text-sm">More details</a>
-    </div>
+    </motion.div>
   );
 };
 
@@ -65,11 +72,13 @@ const News = () => {
           visible: { opacity: 1, y: 0 },
         }}
         initial="hidden"
-        animate={mainControls}
+        whileInView="visible"
         transition={{
           duration: 0.5,
           delay: 0.3,
-        }} className="w-full h-auto flex-col justify-center items-center">
+        }}
+        className="w-full h-auto flex-col justify-center items-center"
+      >
         <h2 className="text-4xl text-center mb-8 mt-2">Actual News</h2>
         <div className="w-full h-auto grid grid-cols-2">
           {news.map((article, i) => (

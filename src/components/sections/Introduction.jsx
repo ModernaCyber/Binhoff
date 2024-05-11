@@ -19,14 +19,14 @@ const Introduction = () => {
        <motion.div
         ref={ref}
         variants={{
-          hidden: { opacity: 0, y: 75 },
+          hidden: { opacity: 0, y: 100 },
           visible: { opacity: 1, y: 0 },
         }}
         initial="hidden"
-        animate={mainControls}
+        whileInView="visible"
         transition={{
           duration: 0.75,
-          delay: 0.3,
+          delay: 0.5,
         }}
          className="w-full flex flex-col justify-start h-[400px] py-10">
         <div className="text-4xl mb-4 ">
