@@ -34,7 +34,7 @@ const Testimonial = ({
               <h6 className="text-gray-600 text-sm">{testimonial.role}</h6>
             </div>
           </div>
-          <div className="ml-auto flex items-center">
+          <div className="flex items-center mr-40 dark:text-white z-20">
             <span className="mr-2">
               <IoIosArrowRoundBack />
             </span>
@@ -118,7 +118,6 @@ const Testimonials = () => {
           <motion.div
             initial={{ opacity: 0, x:100 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0,x:-100 }}
             transition={{ duration: 0.5 }}
             className="absolute top-0 left-0 w-full h-full"
           >

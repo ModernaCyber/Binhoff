@@ -27,6 +27,14 @@ const Gallery = () => {
 
   const [currentImg, setCurrentImg] = useState(0);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImg((prev) => (prev + 1) % images.length);
+    }, 2000 * 5); 
+
+    return () => clearInterval(interval);
+  });
+
   return (
     <Wrapper>
       <AnimatePresence>
@@ -46,7 +54,7 @@ const Gallery = () => {
         >
           <div className="w-full h-12 flex justify-between ">
             <h2 className="text-2xl">Binhoff gallery</h2>
-            <div className="ml-auto flex items-center">
+            <div className="ml-auto flex items-center dark:text-white">
               <span className="mr-2">
                 <IoIosArrowRoundBack />
               </span>
@@ -65,14 +73,14 @@ const Gallery = () => {
               <React.Fragment key={i}>
                 {i === currentImg ? (
                   <motion.div
-                    initial={{ opacity: 0, x: 800, scale: 0.8 }}
+                    initial={{ opacity: .9, x: 800, scale: 0.9 }}
                     whileInView={{ opacity: 1, x: 0, scale: 1 }}
-                    exit={{ opacity: 0, x: 800, scale: 0.8 }}
+                    exit={{ opacity: 0, x: 0, scale: 0.8 }}
                     transition={{
                       duration: 0.75,
                       delay: 0.3,
                     }}
-                    className="h-[400px] w-4/5 flex items-center rounded-2xl overflow-hidden justify-start"
+                    className="h-[400px] z-20 w-4/5 flex items-center rounded-2xl overflow-hidden justify-start"
                   >
                     <img
                       src={img}
@@ -94,7 +102,7 @@ const Gallery = () => {
                 }}
                 className="w-[200px] h-[400px] rounded-2xl absolute right-0 overflow-hidden"
               >
-                <div className="h-full w-[500px] ">
+                <div className="h-full w-[500px] z-10 ">
                   <img
                     src={
                       images[

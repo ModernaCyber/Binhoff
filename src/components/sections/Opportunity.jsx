@@ -95,7 +95,7 @@ const Opportunity = () => {
             duration: 0.95,
             delay: 0.95,
           }}
-          className="p-8 w-[280px] mr-auto h-[400px] flex flex-col rounded-xl bg-[#dadfe1] overflow-hidden"
+          className="p-8 w-[280px] mr-auto h-[400px] flex flex-col rounded-xl bg-[#dadfe1] dark:bg-black dark:border dark:border-[#dadfe1] overflow-hidden"
         >
           <div className="h-14 text-xl">
             <CiUmbrella />
